@@ -5,7 +5,11 @@ const profileSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  username: {
+  firstname: {
+    type: String,
+    required: true,
+  },
+  lastname:{
     type: String,
     required: true,
   },

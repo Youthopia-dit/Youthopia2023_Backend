@@ -5,6 +5,7 @@ const details = async (req, res) => {
       name: "dummy",
       designation: "dummy",
       image: "dummy",
+      index: 1,
     });
     await newDetail.save();
     res

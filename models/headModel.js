@@ -13,6 +13,10 @@ const headSchema=new mongoose.Schema({
         type:String,
         required:true
     },
+    index:{
+        type:Number,
+        required:true
+    }
 
 })
 const head=mongoose.model("heads",headSchema)

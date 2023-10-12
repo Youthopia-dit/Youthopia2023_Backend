@@ -19,6 +19,7 @@ const eventdetails = async (req, res) => {
     overall_head,
     participant_max,
     participant_min,
+    category,
   } = req.body;
   try {
     const newDetail = new Detail({
@@ -40,6 +41,7 @@ const eventdetails = async (req, res) => {
       overall_head,
       participant_max,
       participant_min,
+      category,
     });
     await newDetail.save();
     res
