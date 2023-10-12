@@ -83,8 +83,33 @@ const login = async (req, res) => {
       .json({ message: "Something went wrong server error", success: false });
   }
 };
+const resetPassword = async (req, res) => {
+  try {
+    const { email, password, newpassword } = req.body;
+    const user = await User.findOne({ email: email.toLowerCase() });
+    const verified = await bcrypt.compare(password, user.password);
+    if (verified) {
+      const salt = await bcrypt.genSalt(10);
+      const hashed = await bcrypt.hash(newpassword, salt);
+      await User.findByIdAndUpdate(
+        user._id,
+        { password: hashed },
+        { new: true }
+      );
+      res
+        .status(200)
+        .json({ success: true, message: "Password Changed Successfully" });
+    } else {
+      throw new Error({ message: "Wrong Password", success: false });
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Worng Credentials", success: false });
+  }
+};
 
 module.exports = {
   login,
   register,
+  resetPassword,
 };
