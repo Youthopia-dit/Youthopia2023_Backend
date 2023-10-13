@@ -22,7 +22,7 @@ const eventdetails = async (req, res) => {
     category,
   } = req.body;
   try {
-    const newDetail = new Detail({
+    const newDetail = new events({
       event_id,
       event_name,
       event_description,

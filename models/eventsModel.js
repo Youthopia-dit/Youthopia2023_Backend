@@ -46,7 +46,7 @@ const eventSchema = new mongoose.Schema({
     required: true,
   },
   coordinator: {
-    type: { name: String, number: String }, // Array of strings
+    type: {}, // Array of strings
     required: true,
   },
   rules: {
