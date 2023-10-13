@@ -29,6 +29,18 @@ const eventSchema = new mongoose.Schema({
     type: Number,
     required: false,
   },
+  feesnondit1: {
+    type: Number,
+    required: true,
+  },
+  feesnondit2: {
+    type: Number,
+    required: false,
+  },
+  feesnondit3: {
+    type: Number,
+    required: false,
+  },
   venue: {
     type: String,
     required: true,
@@ -62,7 +74,7 @@ const eventSchema = new mongoose.Schema({
     required: true,
   },
   overall_head: {
-    type: [String],
+    type: {},
     required: true,
   },
   participant_max: {
