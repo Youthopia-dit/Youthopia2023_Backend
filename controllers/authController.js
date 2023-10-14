@@ -1,4 +1,4 @@
-const User=require("../models/profileModel");
+const User = require("../models/profileModel");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const register = async (req, res) => {
@@ -11,9 +11,9 @@ const register = async (req, res) => {
     college,
     year,
     identityNumber,
-    // participant_identity,
+    photo,
   } = req.body.data;
-  console.log(req.body)
+  console.log(req.body);
   try {
     const existingUser = await User.findOne({ email: email });
     if (existingUser) {
@@ -30,8 +30,8 @@ const register = async (req, res) => {
       password: hashedPassword,
       college: college,
       year: year,
-      participant_identity: identityNumber,
-      // participant_identity_number: participant_identity_number,
+      participant_identity_number: identityNumber,
+      participant_identity: photo,
     });
     const token = jwt.sign(
       { email: result.email, id: result._id },
