@@ -20,10 +20,6 @@ const registrationSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  payment_id: {
-    type: String,
-    required: true,
-  },
 });
 
 const Registration = mongoose.model("Registration", registrationSchema);
