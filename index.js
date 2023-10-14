@@ -27,7 +27,7 @@ app.use("/a", headRouter);
 app.use("/event", eventRouter);
 app.use("/auth", authRouter);
 
-app.listen(PORT, "192.168.30.61", () => {
+app.listen(PORT, () => {
   console.log(`server running on port no ${PORT}!!!!!!`);
 });
 
