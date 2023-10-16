@@ -1,5 +1,6 @@
 
 const user=require("../models/registrationModel")
+
 const registeruser = async (req, res) => {
     const {team_name, team_members, event_id } = req.body;
      try {
@@ -26,4 +27,4 @@ const registeruser = async (req, res) => {
      }
     }
 
-module.export={registeruser}
+module.exports={registeruser}

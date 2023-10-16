@@ -4,7 +4,7 @@ const app = express();
 const headRouter = require("./routes/headRoute");
 const authRouter = require("./routes/authRoute");
 const userRouter=require("./routes/userRoute");
-
+const sponsorRouter=require("./routes/sponsorRoute");
 require("dotenv").config();
 const PORT = process.env.PORT;
 const cors = require("cors");
@@ -27,6 +27,7 @@ app.use(cors("http://localhost:3000"));
 app.use("/a", headRouter);
 app.use("/event", eventRouter);
 app.use("/auth", authRouter);
+app.use("/sponsor",sponsorRouter);
 app.use("/user",userRouter);
 
 app.listen(PORT, () => {
