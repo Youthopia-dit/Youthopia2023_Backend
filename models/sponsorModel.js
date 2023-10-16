@@ -1,13 +1,14 @@
 const mongoose = require("mongoose");
 const sponsorSchema = new mongoose.Schema({
     sponser_img: {
-        type: [String],
+        type: {},
         required: true,
     },
     carousel_img:{
         type:[String],
-        required:true
+        required:true,
     },
+    
     
 });
 const Sponsors = mongoose.model("Sponsers", sponsorSchema);
