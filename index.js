@@ -25,11 +25,11 @@ connectDb();
 app.use(express.json());
 app.use(cors("http://localhost:3000"));
 app.use("/a", headRouter);
-app.use("/event",eventRouter);
+app.use("/event", eventRouter);
 app.use("/auth", authRouter);
 app.use("/user",userRouter);
 
-app.listen(PORT, "192.168.194.83", () => {
+app.listen(PORT, () => {
   console.log(`server running on port no ${PORT}!!!!!!`);
 });
 
