@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const app = express();
 const headRouter = require("./routes/headRoute");
 const authRouter = require("./routes/authRoute");
+const userRouter=require("./routes/userRoute");
 
 require("dotenv").config();
 const PORT = process.env.PORT;
@@ -26,6 +27,7 @@ app.use(cors("http://localhost:3000"));
 app.use("/a", headRouter);
 app.use("/event",eventRouter);
 app.use("/auth", authRouter);
+app.use("/user",userRouter);
 
 app.listen(PORT, "192.168.194.83", () => {
   console.log(`server running on port no ${PORT}!!!!!!`);
