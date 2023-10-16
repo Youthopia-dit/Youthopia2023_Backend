@@ -8,8 +8,6 @@ const sponsorSchema = new mongoose.Schema({
         type:[String],
         required:true,
     },
-    
-    
 });
 const Sponsors = mongoose.model("Sponsers", sponsorSchema);
 module.exports = Sponsors;
