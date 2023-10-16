@@ -1,17 +1,13 @@
-const heads = require("../models/headModel");
+
+const user=require("../models/registrationModel")
 
 const registeruser = async (req, res) => {
-    const { user_id, team_name, team_members, event_id } = req.body;
+    const {team_name, team_members, event_id } = req.body;
      try {
-    const existingUser = await heads.findOne({ user_id: user_id });
-    if (!existingUser) {
-      res.status(400).json({
-        status: "fail",
-        message: "User already exists",
-      });
-    }
+      const user_id = req.userId;
+      console.log(user_id);
 
-    const newDetail = new heads({
+    const newDetail = new user({
       user_id: user_id,
       team_name: team_name,
       team_members: team_members,
@@ -31,4 +27,4 @@ const registeruser = async (req, res) => {
      }
     }
 
-module.export={registeruser}
+module.exports={registeruser}
