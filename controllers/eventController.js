@@ -65,4 +65,24 @@ const getEventDetails = async (req, res) => {
     });
   }
 };
-module.exports = { eventdetails,getEventDetails };
+
+const getEventDetailsByDate = async (req, res) => {
+  try {
+    const {date} = req.body;
+    if(date.includes("-")){
+      const newdate=date.split("-")[0]; 
+      const details = await events.find({ date: newdate });
+      res.status(200).json({ details });
+    }
+    else{
+      const details = await events.find({ date: date });
+      res.status(200).json({ details });
+    }
+  } catch (err) {
+    res.status(400).json({
+      status: "fail",
+      message: err,
+    });
+  }
+}
+module.exports = { eventdetails,getEventDetails, getEventDetailsByDate };
