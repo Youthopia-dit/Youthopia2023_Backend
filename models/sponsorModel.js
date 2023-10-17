@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const sponsorSchema = new mongoose.Schema({
     sponser_img: {
-        type: {},
+        type: [String],
         required: true,
     },
     carousel_img:{
