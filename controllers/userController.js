@@ -24,4 +24,17 @@ const registeruser = async (req, res) => {
   }
 };
 
-module.exports = { registeruser };
+const getRegisteredUsers = async (req, res) => {
+  try {
+    const user_id = req.userId;
+    const details = await user.find({ user_id: user_id.id});
+    res.status(200).json({ details });
+  } catch (err) {
+    res.status(400).json({
+      status: "fail",
+      message: err,
+    });
+  }
+};
+
+module.exports = { registeruser, getRegisteredUsers };
