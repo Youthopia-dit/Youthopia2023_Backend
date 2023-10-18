@@ -66,6 +66,19 @@ const getEventDetails = async (req, res) => {
   }
 };
 
+const getEventDetailsbyId = async (req, res) => {
+  try {
+    const { id } = req.body;
+    const details = await events.find({ _id: id });
+    res.status(200).json({ details });
+  } catch (err) {
+    res.status(400).json({
+      status: "fail",
+      message: err,
+    });
+  } 
+}
+
 const getEventDetailsByDate = async (req, res) => {
   try {
     const {date} = req.body;
@@ -85,4 +98,4 @@ const getEventDetailsByDate = async (req, res) => {
     });
   }
 }
-module.exports = { eventdetails,getEventDetails, getEventDetailsByDate };
+module.exports = { eventdetails,getEventDetails, getEventDetailsByDate, getEventDetailsbyId };
