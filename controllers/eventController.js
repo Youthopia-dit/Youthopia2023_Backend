@@ -69,9 +69,11 @@ const getEventDetails = async (req, res) => {
 const getEventDetailsbyId = async (req, res) => {
   try {
     const { id } = req.body;
-    const details = await events.find({ _id: id });
+    const details = await events.find({ event_id: id });
+    console.log(details);
     res.status(200).json({ details });
   } catch (err) {
+    console.log(err);
     res.status(400).json({
       status: "fail",
       message: err,
