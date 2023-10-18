@@ -1,16 +1,16 @@
 const user = require("../models/registrationModel");
 
 const registeruser = async (req, res) => {
-  const { team_name, team_members, event_id } = req.body;
+  const { teamName, mem, phone, eventID } = req.body.data;
   try {
     const user_id = req.userId;
     console.log(user_id);
 
     const newDetail = new user({
       user_id: user_id.id,
-      team_name: team_name,
-      team_members: team_members,
-      event_id: event_id,
+      team_name: teamName,
+      team_members: mem,
+      event_id: eventID,
       event_order_id: "dummy",
     });
 

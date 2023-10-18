@@ -18,15 +18,15 @@ const eventSchema = new mongoose.Schema({
     required: true,
   },
   fees1: {
-    type: Number,
+    type: String,
     required: true,
   },
   fees2: {
-    type: Number,
+    type: String,
     required: false,
   },
   fees3: {
-    type: Number,
+    type: String,
     required: false,
   },
   feesnondit1: {
@@ -58,7 +58,7 @@ const eventSchema = new mongoose.Schema({
     required: true,
   },
   coordinator: {
-    type:{}, // Array of strings
+    type: {}, // Array of strings
     required: true,
   },
   rules: {
@@ -85,11 +85,10 @@ const eventSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  category:{
-    type:String,
-    required:true,
+  category: {
+    type: String,
+    required: true,
   },
-  
 });
 
 const Event = mongoose.model("Event", eventSchema);
