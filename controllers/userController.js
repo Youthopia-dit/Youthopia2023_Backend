@@ -13,6 +13,7 @@ const registeruser = async (req, res) => {
       team_members: mem,
       event_id: eventID,
       event_order_id: "dummy",
+      phone: phone,
     });
 
     await newDetail.save();

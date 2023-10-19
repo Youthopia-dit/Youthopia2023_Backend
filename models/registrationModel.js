@@ -21,6 +21,10 @@ const registrationSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  phone: {
+    type: String,
+    required: true,
+  },
 });
 
 const Registration = mongoose.model("Registration", registrationSchema);
