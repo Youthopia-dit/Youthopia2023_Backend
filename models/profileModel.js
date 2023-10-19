@@ -5,9 +5,8 @@ const profileSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  lastname:{
+  lastname: {
     type: String,
-    required: true,
   },
   email: {
     type: String,
@@ -27,21 +26,20 @@ const profileSchema = new mongoose.Schema({
   },
   registered_events: {
     type: [String],
-    default: [], 
+    default: [],
   },
   password: {
     type: String,
     required: true,
   },
-  participant_identity:{
+  participant_identity: {
     type: String,
     required: false,
   },
-  participant_identity_number:{
-    type:String,
-    required:false,
-  }
-  
+  participant_identity_number: {
+    type: String,
+    required: false,
+  },
 });
 
 const Profile = mongoose.model("Profile", profileSchema);

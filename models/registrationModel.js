@@ -11,6 +11,7 @@ const registrationSchema = new mongoose.Schema({
   team_members: {
     type: [String],
     required: true,
+    default: [],
   },
   event_id: {
     type: String,

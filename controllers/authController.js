@@ -2,19 +2,19 @@ const User = require("../models/profileModel");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const register = async (req, res) => {
-  const {
-    firstName,
-    lastName,
-    email,
-    phonenumber,
-    password,
-    college,
-    year,
-    identityNumber,
-    photo,
-  } = req.body.data;
-  console.log(req.body);
   try {
+    const {
+      firstName,
+      lastName,
+      email,
+      phonenumber,
+      password,
+      college,
+      year,
+      identityNumber,
+      photo,
+    } = req.body.data;
+    console.log(req.body);
     const existingUser = await User.findOne({ email: email });
     if (existingUser) {
       return res

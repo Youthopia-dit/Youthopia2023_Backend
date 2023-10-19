@@ -1,4 +1,5 @@
 const user = require("../models/registrationModel");
+const profile = require("../models/profileModel");
 
 const registeruser = async (req, res) => {
   try {
@@ -37,4 +38,17 @@ const getRegisteredUsers = async (req, res) => {
   }
 };
 
-module.exports = { registeruser, getRegisteredUsers };
+const getUser = async (req, res) => {
+  try {
+    const user_id = req.userId;
+    const details = await profile.find({ _id: user_id.id });
+    res.status(200).json({ details });
+  } catch (err) {
+    res.status(400).json({
+      status: "fail",
+      message: err,
+    });
+  }
+};
+
+module.exports = { registeruser, getRegisteredUsers, getUser };
