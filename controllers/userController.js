@@ -12,7 +12,7 @@ const registeruser = async (req, res) => {
       team_name: teamName,
       team_members: mem,
       event_id: eventID,
-      event_order_id: "dummy",
+      event_order_id: `${eventID}_${phone}`,
       phone: phone,
     });
 
@@ -22,7 +22,9 @@ const registeruser = async (req, res) => {
       message: "Registered successfully",
     });
   } catch (err) {
-    console.log(err);
+    res.status(500).json({
+      message: "iternal server error!",
+    });
   }
 };
 
