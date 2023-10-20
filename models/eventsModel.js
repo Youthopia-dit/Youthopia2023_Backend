@@ -31,7 +31,7 @@ const eventSchema = new mongoose.Schema({
   },
   feesnondit1: {
     type: Number,
-    required: true,
+    required: false,
   },
   feesnondit2: {
     type: Number,
