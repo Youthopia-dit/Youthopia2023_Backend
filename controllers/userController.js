@@ -51,5 +51,17 @@ const getUser = async (req, res) => {
     });
   }
 };
+const getUserbyId =async(req,res)=>{
+  try{
+    const {id}=req.body;
+    const details=await profile.find({_id:id});
+    res.status(200).json({details});
+  }catch(err){
+    res.status(400).json({
+      status: "fail",
+      message: err,
+    });
+  }
+}
 
-module.exports = { registeruser, getRegisteredUsers, getUser };
+module.exports = { registeruser, getRegisteredUsers, getUser, getUserbyId };

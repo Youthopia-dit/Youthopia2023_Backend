@@ -8,6 +8,10 @@ const sponsorSchema = new mongoose.Schema({
         type:[String],
         required:true,
     },
+    featured_event:{
+        type:[String],
+        required:false,
+    }
 });
 const Sponsors = mongoose.model("Sponsers", sponsorSchema);
 module.exports = Sponsors;
