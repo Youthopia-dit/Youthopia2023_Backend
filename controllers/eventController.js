@@ -1,4 +1,5 @@
 const events=require("../models/eventsModel");
+const regis = require("../models/registrationModel");
 const eventdetails = async (req, res) => {
   
   try {
@@ -82,6 +83,20 @@ const getEventDetailsbyId = async (req, res) => {
   } 
 }
 
+const getRegisteredParticipants = async (req, res) => {
+  try {
+    const { id } = req.body;
+    const details = await regis.find({ event_id: id });
+    console.log(details);
+    res.status(200).json({ details });
+  } catch (err) {
+    res.status(400).json({
+      status: "fail",
+      message: err,
+    });
+  }
+}
+
 const getEventDetailsByDate = async (req, res) => {
   try {
     const {date} = req.body;
@@ -101,4 +116,4 @@ const getEventDetailsByDate = async (req, res) => {
     });
   }
 }
-module.exports = { eventdetails,getEventDetails, getEventDetailsByDate, getEventDetailsbyId };
+module.exports = { eventdetails,getEventDetails, getEventDetailsByDate, getEventDetailsbyId , getRegisteredParticipants};
