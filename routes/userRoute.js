@@ -11,6 +11,6 @@ const authenticateToken = require("../Middleware/authenticateToken");
 userRouter.post("/registeruser", authenticateToken, registeruser);
 userRouter.get("/getregisteruser", authenticateToken, getRegisteredUsers);
 userRouter.get("/getuser", authenticateToken, getUser);
-userRouter.get("/getuserbyid", getUserbyId)
+userRouter.post("/getuserbyid", getUserbyId)
 
 module.exports = userRouter;
