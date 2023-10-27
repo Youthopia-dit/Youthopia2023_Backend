@@ -16,8 +16,11 @@ const headSchema=new mongoose.Schema({
     index:{
         type:Number,
         required:true
+    },
+    number:{
+        type:Number,
+        required:true
     }
-
 })
 const head=mongoose.model("heads",headSchema)
 module.exports=head
